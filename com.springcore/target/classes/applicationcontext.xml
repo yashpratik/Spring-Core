@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xmlns:context="http://www.springframework.org/schema/context"
+ xmlns:p="http://www.springframework.org/schema/p" 
+ xsi:schemaLocation="http://www.springframework.org/schema/beans 
+ http://www.springframework.org/schema/beans/spring-beans-3.0.xsd 
+ http://www.springframework.org/schema/context 
+ http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+ 
+<context:annotation-config></context:annotation-config>
+ 
+ <bean id="rbean" class="com.Assignment_1.Role" factory-method="getRole">
+ 
+ </bean>
+ <bean id="utest" class="com.Assignment_2.User">
+<constructor-arg>
+<array>
+<value>70</value>
+<value>80</value>
+<value>77</value>
+<value>60</value>
+<value>87</value>
+<value>59</value>
+</array>
+</constructor-arg>
+ </bean>
+ 
+ <bean id="dbean1" class="com.Assignment_4.Department">
+ <property name="id" value="1"></property>
+ <property name="dname" value="Testing"></property>
+ </bean>
+ <bean id="ebean1" class="com.Assignment_4.Employee">
+ <property name="eid" value="11"></property>
+ <property name="ename" value="Sagar"></property>
+ <property name="salary" value="15"></property>
+ </bean>
+ <bean id="dbean2" class="com.Assignment_4.Department">
+ <property name="id" value="2"></property>
+ <property name="dname" value="SAP"></property>
+ </bean>
+ <bean id="ebean2" class="com.Assignment_4.Employee">
+ <property name="eid" value="12"></property>
+ <property name="ename" value="VIKI"></property>
+ <property name="salary" value="25"></property>
+ </bean>
+ 
+ <bean id="cbean1" class="com.Assignment_9.CityDis">
+ <property name="fromcity" value="Solapur"></property>
+ <property name="tocity" value="Mumbai"></property>
+ <property name="distance" value="400"></property>
+ </bean>
+ <bean id="cbean2" class="com.Assignment_9.CityDis">
+ <property name="fromcity" value="Solapur"></property>
+ <property name="tocity" value="Pune"></property>
+ <property name="distance" value="350"></property>
+ </bean>
+ <bean id="cbean3" class="com.Assignment_9.CityDis">
+ <property name="fromcity" value="Kolhapur"></property>
+ <property name="tocity" value="Solapur"></property>
+ <property name="distance" value="500"></property>
+ </bean>
+ <bean id="cbean4" class="com.Assignment_9.CityDis">
+ <property name="fromcity" value="Solapur"></property>
+ <property name="tocity" value="Satara"></property>
+ <property name="distance" value="600"></property>
+ </bean>
+ <bean id="sbean" class="com.Assignment_10.Student">
+ <property name="std">
+ <map>
+ <entry key="Akash" value="89"/>
+ <entry key="Nikhl" value="78"/>
+ <entry key="Chinmay" value="60"/>
+ <entry key="Pratik" value="75"/>
+ </map>
+ </property>
+ </bean>
+ 
+
+ <bean id="rebean" class="com.Assignment_11.Result">
+ <constructor-arg value="60"></constructor-arg>
+ <constructor-arg value="75"></constructor-arg>
+ <constructor-arg value="96"></constructor-arg>
+ <constructor-arg value="54"></constructor-arg>
+ </bean>
+ <bean id="stbean" class="com.Assignment_11.Student">
+ <constructor-arg value="Akash"></constructor-arg>
+ <constructor-arg value="1"></constructor-arg>
+ <constructor-arg value="13-06-1955"></constructor-arg>
+ <constructor-arg value="12th"></constructor-arg>
+ <constructor-arg value="A"></constructor-arg>
+ <constructor-arg>
+ <ref bean="rebean"/>
+ </constructor-arg>
+   </bean>
+ <bean id="rebean1" class="com.Assignment_11.Result">
+ <constructor-arg value="90"></constructor-arg>
+ <constructor-arg value="46"></constructor-arg>
+ <constructor-arg value="78"></constructor-arg>
+ <constructor-arg value="35"></constructor-arg>
+ </bean>
+ <bean id="stbean1" class="com.Assignment_11.Student">
+ <constructor-arg value="Nikhil"></constructor-arg>
+ <constructor-arg value="2"></constructor-arg>
+ <constructor-arg value="19-12-1945"></constructor-arg>
+ <constructor-arg value="10th"></constructor-arg>
+ <constructor-arg value="B"></constructor-arg>
+ <constructor-arg>
+ <ref bean="rebean1"/>
+ </constructor-arg>
+   </bean>
+   
+   <bean id="depbean" class="com.Assignment_12.Department">
+   <property name="dname" value="Testing"></property>
+   </bean>
+   <bean id="empbean" class="com.Assignment_12.Employee">
+   <property name="id" value="1"></property>
+   <property name="ename" value="Sagar"></property>
+   <property name="salary" value="2500"></property>
+   <property name="dept" ref="depbean"></property>
+   </bean>
+   <bean id="depbean1" class="com.Assignment_12.Department">
+   <property name="dname" value="SAP"></property>
+   </bean>
+   <bean id="empbean1" class="com.Assignment_12.Employee">
+   <property name="id" value="2"></property>
+   <property name="ename" value="Akash"></property>
+   <property name="salary" value="22500"></property>
+   <property name="dept" ref="depbean1"></property>
+   </bean>
+   <bean id="depbean2" class="com.Assignment_12.Department">
+   <property name="dname" value="SAP"></property>
+   </bean>
+   <bean id="empbean2" class="com.Assignment_12.Employee">
+   <property name="id" value="3"></property>
+   <property name="ename" value="Viki"></property>
+   <property name="salary" value="25300"></property>
+   <property name="dept" ref="depbean2"></property>
+   </bean>
+   <bean id="depbean3" class="com.Assignment_12.Department">
+   <property name="dname" value="Testing"></property>
+   </bean>
+   <bean id="empbean3" class="com.Assignment_12.Employee">
+   <property name="id" value="4"></property>
+   <property name="ename" value="Yogesh"></property>
+   <property name="salary" value="2000"></property>
+   <property name="dept" ref="depbean3"></property>
+   </bean>
+   
+    <bean id="mbean1"
+        class="com.Assignment_13.MovieDetails">
+        <property name="mName" value="Thor"></property>
+        <property name="ShowTime" value="12-3"></property>
+        <property name="ticketPrice" value="150"></property>
+    </bean>
+
+    <bean id="mbean2"
+        class="com.Assignment_13.MovieDetails">
+        <property name="mName" value="RRR"></property>
+        <property name="ShowTime" value="9-12"></property>
+        <property name="ticketPrice" value="200"></property>
+    </bean>
+
+    <bean id="mbean3"
+        class="com.Assignment_13.MovieDetails">
+        <property name="mName" value="Bhishma"></property>
+        <property name="ShowTime" value="4-7"></property>
+        <property name="ticketPrice" value="120"></property>
+    </bean>
+   
+   <bean id="cibean" class="com.Assignment_14.ShapeFactory"
+        factory-method="getCircleObject"></bean>
+        <bean id="sqbean" class="com.Assignment_14.ShapeFactory"
+        factory-method="getSquareObject"></bean>
+        <bean id="recbean" class="com.Assignment_14.ShapeFactory"
+        factory-method="getRectangleObject">
+   </bean>
+   
+   <bean id="cubean"
+        class="com.Assignment_15.Customer">
+        <property name="id" value="1"></property>
+        <property name="custname" value="Nikhil"></property>  
+        <property name="iteam" ref="itbean"/>
+    </bean>
+     <bean id="itbean"
+        class="com.Assignment_15.Item">
+        <property name="id" value="2"></property>
+        <property name="iname" value="T-shirt"></property>
+        <property name="price" value="400"></property>
+        <property name="cat" ref="cabean"/>
+    </bean>
+    <bean id="cabean"
+        class="com.Assignment_15.Catagory">
+
+        <property name="catagaryname" value="Cloth"></property>  
+    </bean>
+   
+ <bean id="vbean" class="com.Assignment_6.Vowel">
+ <constructor-arg>
+ <array>
+ <value>Chinmay</value>
+ <value>Ashish</value>
+ <value>Bhushan</value>
+ <value>Ajay</value>
+ <value>Pratik</value>
+ <value>frt</value>
+ <value>srtdd</value>
+ </array>
+ </constructor-arg>
+ </bean>
+ 
+ <bean id="cls1" class="com.Assignment_7.class_1">
+ 
+
+<constructor-arg>
+ <array>
+ 	<value>2</value>
+ 	<value>5</value>
+ 	<value>3</value>
+ 	<value>1</value>
+ 	<value>4</value>
+ </array>
+</constructor-arg>
+ <constructor-arg ref="cls2"></constructor-arg>
+ </bean>
+ 
+ <bean id="cls2" class="com.Assignment_7.class_2">
+ 
+<constructor-arg>
+ <array>
+ 	<value>7</value>
+ 	<value>6</value>
+ 	<value>8</value>
+ 	<value>9</value>
+ 	<value>10</value>
+ </array>
+</constructor-arg>
+ 
+ </bean>
+ <bean id="mbean" class="com.Assignment_5.MaxNo">
+ <constructor-arg>
+ <array>
+ <value>40</value>
+ <value>80</value>
+ <value>56</value>
+ <value>70</value>
+ <value>30</value>
+ <value>60</value>
+ </array>
+ </constructor-arg>
+ 
+ </bean>
+ <bean id="ibean" class="com.Assignment_8.Item">
+ <constructor-arg>
+ <list>
+ <value>Shirts</value>
+ <value>T-Shirts</value>
+ <value>Jeans</value>
+ <value>Jeans</value>
+ </list>
+ </constructor-arg>
+ </bean>
+ <bean id="ebean" class="com.Assignment_3.EMI">
+ <property name="roi" value="10"></property>
+ 
+ </bean>
+ 
+ </beans>
